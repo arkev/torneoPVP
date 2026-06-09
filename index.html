@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2do Torneo Virtual de PVP en Montemorelos</title>
-    <meta name="description" content="Información y reglamento oficial del 2do Torneo Virtual de PVP Pokémon GO en Montemorelos.">
+    <meta name="description" content="Página principal del 2do Torneo Virtual de PVP Pokémon GO en Montemorelos. Participantes, bracket y resultados.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- ========== HERO (igual que reglas.html) ========== -->
     <header class="hero">
         <div class="hero-content">
             <img src="pvpLogo.png" alt="PVP Montemorelos Logo" class="hero-logo">
@@ -31,160 +33,565 @@
     </header>
 
     <main class="container">
-        
-        <div class="grid-2 align-start">
-            <section class="card glass-effect reveal">
-                <div class="card-icon">📱</div>
-                <h2>Comunicación Oficial</h2>
-                <p>Se creará un <strong>grupo de WhatsApp exclusivo</strong> para el torneo. Este será el canal oficial para compartir actualizaciones, anuncios del <em>staff</em> y facilitar la coordinación de combates entre los entrenadores.</p>
-                <p class="note">Toda duda respecto al reglamento puede ser consultada con el staff a través de este grupo.</p>
-            </section>
 
-            <section class="card glass-effect reveal">
-                <div class="card-icon">📝</div>
-                <h2>Registro y Formato</h2>
-                <ul class="feature-list">
-                    <li><strong>Liga:</strong> Liga Súper (Great League). Límite estricto de <strong>1500 PC</strong> por Pokémon.</li>
-                    <li><strong>Equipos:</strong> Cada entrenador deberá registrar un equipo de <strong>6 Pokémon</strong>.</li>
-                    <li><strong>Restricciones:</strong> No está permitido repetir especies ni utilizar Megaevoluciones.</li>
-                    <li><strong>Bloqueo de Equipo:</strong> El registro de cada Pokémon es único. Solo se podrá utilizar la especie con el PC y <em>moveset</em> (ataques) exactos que fueron registrados inicialmente.</li>
-                </ul>
-                <a href="https://forms.gle/ZQszEAqyPSrf88hR9" target="_blank" rel="noopener" class="btn-register">📋 Registrar mi equipo</a>
-            </section>
-        </div>
+        <!-- ========== SECCIÓN 1: INTRODUCCIÓN ========== -->
+        <section class="card glass-effect full-width reveal" id="intro">
+            <div class="card-icon">🏆</div>
+            <h2>Bienvenidos al Torneo</h2>
+            <p>¡La batalla por la supremacía en la Liga Súper comienza! Ocho entrenadores se enfrentan en un torneo Round-Robin seguido de una fase de eliminación directa. Solo uno se coronará como el mejor entrenador de PVP en Montemorelos.</p>
+            <p>Consulta todas las reglas, el sistema de puntuación y las normativas del torneo en el reglamento oficial.</p>
+            <a href="reglas.html" class="btn-register">Ver Reglamento Oficial</a>
+        </section>
 
-        <section class="card glass-effect full-width reveal">
-            <div class="card-icon">⚔️</div>
-            <h2>Estructura del Torneo</h2>
-            <div class="grid-2">
-                <div class="phase-box">
-                    <h3>Fase 1: Grupos (Round-Robin)</h3>
-                    <ul>
-                        <li>Todos los competidores se enfrentarán contra todos los miembros de su mismo grupo.</li>
-                        <li>Esta fase tendrá una duración de <strong>5 días</strong>.</li>
-                        <li><strong>Formato BO3:</strong> Cada ronda se juega al Mejor de 3. El ganador será el primero en ganar 2 partidas (si un jugador gana las primeras dos, no es necesario jugar la tercera).</li>
-                    </ul>
-                </div>
-                <div class="phase-box">
-                    <h3>Fase 2: Eliminación Directa</h3>
-                    <ul>
-                        <li>Avanzarán los jugadores con mayor puntuación de cada grupo (en caso de empate, el <em>staff</em> definirá los clasificados).</li>
-                        <li>Las primeras etapas mantendrán el formato al Mejor de 3 (BO3).</li>
-                        <li><strong>Semifinales y Final:</strong> Se jugarán al Mejor de 5 (BO5). El ganador será el primero en conseguir 3 victorias.</li>
-                    </ul>
-                </div>
+        <!-- ========== SECCIÓN 2: PARTICIPANTES ========== -->
+        <section class="full-width reveal" id="participantes">
+            <div class="section-header">
+                <h2>⚡ Participantes</h2>
+                <p class="section-sub">Haz clic en un entrenador para ver su equipo registrado.</p>
             </div>
-            
-            <div class="combat-dynamics">
-                <h3>Dinámica de Combate</h3>
-                <p>Para cada partida, los jugadores pueden elegir cualquier combinación de 3 Pokémon de entre los 6 que registraron. <strong>Empates:</strong> Si una partida termina en empate, esta se anula y se juega una partida adicional. Los jugadores tienen la libertad de cambiar su equipo y su <em>lead</em> (Pokémon inicial) para la revancha.</p>
+
+            <div class="players-grid" id="playersGrid">
+                <!-- Los datos de los jugadores son renderizados por JS abajo -->
             </div>
         </section>
 
-        <div class="grid-2 align-start">
-            <section class="card glass-effect reveal">
-                <div class="card-icon">🤝</div>
-                <h2>Coordinación y Reporte</h2>
-                <div class="info-block">
-                    <h4>Coordinación</h4>
-                    <p>Es responsabilidad de cada participante contactar a su oponente a la brevedad. Se sugiere proponer intervalos de tiempo de disponibilidad.</p>
-                </div>
-                <div class="info-block">
-                    <h4>Reporte</h4>
-                    <p>El ganador deberá compartir captura de pantalla de su "Diario" en WhatsApp etiquetando al <em>staff</em>.</p>
-                    <div class="code-snippet">
-                        <code>Ejemplo: Arkev 2 - 0 Doonebug97 @MiembroDelStaff</code>
-                    </div>
-                </div>
-            </section>
+        <!-- ========== SECCIÓN 3: ETAPA 1 — ROUND ROBIN ========== -->
+        <section class="card glass-effect full-width reveal" id="etapa1">
+            <div class="card-icon">📋</div>
+            <h2>Etapa 1 — Round Robin</h2>
+            <p>Todos contra todos. El resultado de cada ronda se refleja en la tabla.</p>
 
-            <section class="card glass-effect highlight-border reveal">
-                <div class="card-icon">📊</div>
-                <h2>Sistema de Puntuación</h2>
-                <div class="points-grid">
-                    <div class="point-item win-clean">
-                        <span class="score">3 pts</span>
-                        <span class="desc">Victoria Limpia (2-0)</span>
-                    </div>
-                    <div class="point-item win-close">
-                        <span class="score">2 pts</span>
-                        <span class="desc">Victoria Cerrada (2-1)</span>
-                    </div>
-                    <div class="point-item lose-close">
-                        <span class="score">1 pts</span>
-                        <span class="desc">Derrota Cerrada (1-2)</span>
-                    </div>
-                    <div class="point-item lose-clean">
-                        <span class="score">0 pts</span>
-                        <span class="desc">Derrota Limpia (0-2)</span>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <section class="card glass-effect warning-card full-width reveal">
-            <div class="card-icon">⚠️</div>
-            <h2>Problemas Técnicos y Disputas</h2>
-            <ol class="steps-list">
-                <li><strong>Aviso inmediato:</strong> El afectado debe avisar sobre la falla (lag, desync) <em>antes</em> de la siguiente partida.</li>
-                <li><strong>Acuerdo mutuo:</strong> Si hay consenso, se otorga revancha (se puede cambiar composición).</li>
-                <li><strong>Desacuerdos:</strong> Si no hay consenso, levantar disputa en WhatsApp etiquetando al staff.</li>
-                <li><strong>Evidencia Obligatoria:</strong> Es vital grabar combates. Sin video, no hay revancha. El staff pedirá los videos por privado.</li>
-                <li><em>La resolución final del staff será inapelable.</em></li>
-            </ol>
-        </section>
-
-        <section class="card glass-effect danger-card full-width reveal">
-            <div class="card-icon">🛑</div>
-            <h2>Penalizaciones y Conducta</h2>
-            
-            <div class="grid-2">
-                <div>
-                    <h3>Puntualidad</h3>
-                    <ul>
-                        <li>Avisar con <strong>30 minutos</strong> de anticipación para reagendar.</li>
-                        <li><strong>Retraso +20 min:</strong> 1 punto al afectado.</li>
-                        <li><strong>Retraso +45 min (No-Show):</strong> Derrota automática (2-0).</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Infracciones de Equipo</h3>
-                    <ul>
-                        <li><strong>Prohibido usar MTs</strong> una vez iniciado el torneo.</li>
-                        <li>Usar un Pokémon no registrado conlleva desde derrota en ronda hasta <strong>descalificación definitiva</strong>.</li>
-                    </ul>
-                </div>
+            <div class="table-scroll">
+                <table class="rr-table" id="rrTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Jugador 1</th>
+                            <th>Jugador 2</th>
+                            <th>Jugador 3</th>
+                            <th>Jugador 4</th>
+                            <th>Jugador 5</th>
+                            <th>Jugador 6</th>
+                            <th>Jugador 7</th>
+                            <th>Jugador 8</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JS llena esto -->
+                    </tbody>
+                </table>
             </div>
-            
-            <div class="conduct-box">
-                <h3>Conducta Antideportiva</h3>
-                <p>Será motivo de <strong>expulsión inmediata</strong>. Esto incluye: insultos, acoso, compartir info privada, ignorar al staff, o <em>Stalling</em> (juego lento intencional para retrasar el torneo).</p>
+
+            <!-- Tabla de Puntos -->
+            <h3 style="margin-top:2.5rem;">Tabla de Puntos</h3>
+            <div class="table-scroll">
+                <table class="points-table" id="pointsTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Entrenador</th>
+                            <th>W</th>
+                            <th>CW</th>
+                            <th>CL</th>
+                            <th>L</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JS llena esto -->
+                    </tbody>
+                </table>
             </div>
         </section>
+
+        <!-- ========== SECCIÓN 4: ETAPA 2 — ELIMINACIÓN DIRECTA ========== -->
+        <section class="card glass-effect full-width reveal" id="etapa2">
+            <div class="card-icon">🥊</div>
+            <h2>Etapa 2 — Eliminación Directa</h2>
+            <p>Los primeros 4 clasificados pasan a la <strong>Llave de Ganadores</strong> y los últimos 4 a la <strong>Llave de Perdedores</strong>. Los perdedores de la Llave de Ganadores bajan a enfrentar a los ganadores de la Llave de Perdedores, dándoles una segunda oportunidad.</p>
+
+            <!-- LLAVE DE GANADORES -->
+            <div class="bracket-section">
+                <h3 class="bracket-title winners">🏅 Llave de Ganadores</h3>
+                <div class="bracket-flow">
+                    <div class="bracket-col">
+                        <div class="bracket-label">R1</div>
+                        <div class="bracket-match">
+                            <div class="bracket-tag">Llave A</div>
+                            <div class="bracket-slot">1er Lugar</div>
+                            <div class="bracket-slot">3er Lugar</div>
+                        </div>
+                        <div class="bracket-match">
+                            <div class="bracket-tag">Llave B</div>
+                            <div class="bracket-slot">2do Lugar</div>
+                            <div class="bracket-slot">4to Lugar</div>
+                        </div>
+                    </div>
+                    <div class="bracket-col">
+                        <div class="bracket-label">R2</div>
+                        <div class="bracket-match gold-match">
+                            <div class="bracket-tag">Final Ganadores</div>
+                            <div class="bracket-slot">Ganador R1-A</div>
+                            <div class="bracket-slot">Ganador R1-B</div>
+                        </div>
+                        <div class="bracket-note">Ganador → R5 (Gran Final)<br>Perdedor → baja a R4</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LLAVE DE PERDEDORES -->
+            <div class="bracket-section">
+                <h3 class="bracket-title losers">🔁 Llave de Perdedores</h3>
+                <div class="bracket-flow">
+                    <div class="bracket-col">
+                        <div class="bracket-label">R1</div>
+                        <div class="bracket-match">
+                            <div class="bracket-tag">Llave C</div>
+                            <div class="bracket-slot">5to Lugar</div>
+                            <div class="bracket-slot">7mo Lugar</div>
+                        </div>
+                        <div class="bracket-match">
+                            <div class="bracket-tag">Llave D</div>
+                            <div class="bracket-slot">6to Lugar</div>
+                            <div class="bracket-slot">8vo Lugar</div>
+                        </div>
+                    </div>
+                    <div class="bracket-col">
+                        <div class="bracket-label">R2</div>
+                        <div class="bracket-match">
+                            <div class="bracket-slot">Ganador R1-C</div>
+                            <div class="bracket-slot dim">Perdedor R1-A ↓</div>
+                        </div>
+                        <div class="bracket-match">
+                            <div class="bracket-slot">Ganador R1-D</div>
+                            <div class="bracket-slot dim">Perdedor R1-B ↓</div>
+                        </div>
+                    </div>
+                    <div class="bracket-col">
+                        <div class="bracket-label">R3</div>
+                        <div class="bracket-match">
+                            <div class="bracket-slot">Ganador R2-C</div>
+                            <div class="bracket-slot">Ganador R2-D</div>
+                        </div>
+                    </div>
+                    <div class="bracket-col">
+                        <div class="bracket-label">R4</div>
+                        <div class="bracket-match">
+                            <div class="bracket-slot">Ganador R3</div>
+                            <div class="bracket-slot dim">Perdedor R2-AB ↓</div>
+                        </div>
+                        <div class="bracket-note">Ganador → R5 (Gran Final)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRAN FINAL -->
+            <div class="bracket-section">
+                <h3 class="bracket-title grand">🏆 Gran Final — R5</h3>
+                <div class="bracket-flow center-flow">
+                    <div class="bracket-col">
+                        <div class="bracket-match champion-match">
+                            <div class="bracket-tag">Gran Final</div>
+                            <div class="bracket-slot">Ganador R2-AB</div>
+                            <div class="bracket-slot">Ganador R4</div>
+                        </div>
+                    </div>
+                    <div class="bracket-col champion-col">
+                        <div class="champion-box">🏆 Campeón<br><span>Por definir</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="reveal">
         <p>&copy; 2026 Torneo Virtual de PVP Montemorelos. Organizado por Arkev.</p>
     </footer>
 
+    <!-- ======================================================= -->
+    <!-- DATA + LOGIC                                            -->
+    <!-- ======================================================= -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.reveal');
+    /* ============================================================
+       DATOS DE JUGADORES — Edita este objeto para actualizar toda la página.
+       Escala de calificación: A (mejor) → F (peor). Se mapea a 6→1 para el gráfico.
+       ============================================================ */
+    const PLAYERS = [
+        {
+            name: "Jugador 1",
+            code: "1234 5678 9012",
+            avatar: "images/placeholderAvatar.png",
+            grades: { cobertura: "A", seguridad: "B", consistencia: "A", aguante: "C" },
+            team: [
+                { img: "images/placeholderPokemon.png", name: "Azumarill", fast: "Burbuja", charged1: "Rayo Hielo", charged2: "Carantoña" },
+                { img: "images/placeholderPokemon.png", name: "Registeel", fast: "Cerrojo", charged1: "Onda Certera", charged2: "Lanzallamas" },
+                { img: "images/placeholderPokemon.png", name: "Altaria", fast: "Aliento Dragón", charged1: "Meteoro Dragón", charged2: "Pulso Umbrío" },
+                { img: "images/placeholderPokemon.png", name: "Galarian Stunfisk", fast: "Disparo Lodo", charged1: "Roca Afilada", charged2: "Terremoto" },
+                { img: "images/placeholderPokemon.png", name: "Medicham", fast: "Contraataque", charged1: "Puño Dinámico", charged2: "Psicocarga" },
+                { img: "images/placeholderPokemon.png", name: "Sableye", fast: "Garra Umbría", charged1: "Puño Certero", charged2: "Bola Sombra" }
+            ]
+        },
+        {
+            name: "Jugador 2",
+            code: "2345 6789 0123",
+            avatar: "images/placeholderAvatar.png",
+            grades: { cobertura: "B", seguridad: "A", consistencia: "C", aguante: "B" },
+            team: [
+                { img: "images/placeholderPokemon.png", name: "Trevenant", fast: "Garra Umbría", charged1: "Bola Sombra", charged2: "Bomba Germen" },
+                { img: "images/placeholderPokemon.png", name: "Bastiodon", fast: "Antiaéreo", charged1: "Roca Afilada", charged2: "Lanzallamas" },
+                { img: "images/placeholderPokemon.png", name: "Lickitung", fast: "Lengüetazo", charged1: "Golpe Cuerpo", charged2: "Pu. Dinámico" },
+                { img: "images/placeholderPokemon.png", name: "Swampert", fast: "Pistola Agua", charged1: "Hidrocañón", charged2: "Terremoto" },
+                { img: "images/placeholderPokemon.png", name: "Skarmory", fast: "Ala de Acero", charged1: "Pájaro Osado", charged2: "Ala de Acero" },
+                { img: "images/placeholderPokemon.png", name: "Venusaur", fast: "Látigo Cepa", charged1: "Planta Feroz", charged2: "Bomba Lodo" }
+            ]
+        },
+        {
+            name: "Jugador 3",
+            code: "3456 7890 1234",
+            avatar: "images/placeholderAvatar.png",
+            grades: { cobertura: "C", seguridad: "B", consistencia: "B", aguante: "A" },
+            team: [
+                { img: "images/placeholderPokemon.png", name: "Umbreon", fast: "Alarido", charged1: "Último Recurso", charged2: "Pulso Umbrío" },
+                { img: "images/placeholderPokemon.png", name: "Noctowl", fast: "Ala de Acero", charged1: "Bola Sombra", charged2: "Ataque Aéreo" },
+                { img: "images/placeholderPokemon.png", name: "Jellicent", fast: "Hexágono", charged1: "Bola Sombra", charged2: "Rayo Burbuja" },
+                { img: "images/placeholderPokemon.png", name: "Pelipper", fast: "Ala de Acero", charged1: "Hidropulso", charged2: "Vendaval" },
+                { img: "images/placeholderPokemon.png", name: "Toxicroak", fast: "Contraataque", charged1: "Bomba Lodo", charged2: "Puño Lodo" },
+                { img: "images/placeholderPokemon.png", name: "Lanturn", fast: "Chispa", charged1: "Hidrobomba", charged2: "Rayo" }
+            ]
+        },
+        {
+            name: "Jugador 4",
+            code: "4567 8901 2345",
+            avatar: "images/placeholderAvatar.png",
+            grades: { cobertura: "A", seguridad: "C", consistencia: "B", aguante: "B" },
+            team: [
+                { img: "images/placeholderPokemon.png", name: "Cresselia", fast: "Psicocorte", charged1: "Rayo Lunar", charged2: "Bola de Hierba" },
+                { img: "images/placeholderPokemon.png", name: "Scrafty", fast: "Contraataque", charged1: "Puño Certero", charged2: "Pulso Umbrío" },
+                { img: "images/placeholderPokemon.png", name: "Ferrothorn", fast: "Prim. Bala", charged1: "Pu. Dinámico", charged2: "Bola Espejo" },
+                { img: "images/placeholderPokemon.png", name: "Whiscash", fast: "Disparo Lodo", charged1: "Terremoto", charged2: "Ventisca" },
+                { img: "images/placeholderPokemon.png", name: "Froslass", fast: "Nieve Polvo", charged1: "Avalancha", charged2: "Bola Sombra" },
+                { img: "images/placeholderPokemon.png", name: "Drapion", fast: "Colmillo Veneno", charged1: "Acua Cola", charged2: "Pu. Certero" }
+            ]
+        },
+        {
+            name: "Jugador 5",
+            code: "5678 9012 3456",
+            avatar: "images/placeholderAvatar.png",
+            grades: { cobertura: "B", seguridad: "B", consistencia: "A", aguante: "C" },
+            team: [
+                { img: "images/placeholderPokemon.png", name: "Walrein", fast: "Nieve Polvo", charged1: "Colm. Hielo", charged2: "Terremoto" },
+                { img: "images/placeholderPokemon.png", name: "Talonflame", fast: "Incinerar", charged1: "Pájaro Osado", charged2: "Lanzallamas" },
+                { img: "images/placeholderPokemon.png", name: "Mandibuzz", fast: "Ala de Acero", charged1: "Pulso Umbrío", charged2: "Aéreo As" },
+                { img: "images/placeholderPokemon.png", name: "Deoxys Def", fast: "Contraataque", charged1: "Psicocarga", charged2: "Roca Afilada" },
+                { img: "images/placeholderPokemon.png", name: "Diggersby", fast: "Disparo Lodo", charged1: "Puñ. Fuego", charged2: "Terremoto" },
+                { img: "images/placeholderPokemon.png", name: "Nidoqueen", fast: "Puya Nociva", charged1: "Colm. Veneno", charged2: "Tierra Viva" }
+            ]
+        },
+        {
+            name: "Jugador 6",
+            code: "6789 0123 4567",
+            avatar: "images/placeholderAvatar.png",
+            grades: { cobertura: "C", seguridad: "A", consistencia: "C", aguante: "A" },
+            team: [
+                { img: "images/placeholderPokemon.png", name: "Tropius", fast: "Ala de Acero", charged1: "Hoja Mágica", charged2: "Aéreo As" },
+                { img: "images/placeholderPokemon.png", name: "Munchlax", fast: "Lengüetazo", charged1: "Golpe Cuerpo", charged2: "Terratem." },
+                { img: "images/placeholderPokemon.png", name: "Carbink", fast: "Roca Afilada", charged1: "Fuerza Lunar", charged2: "Pu. Dinámico" },
+                { img: "images/placeholderPokemon.png", name: "Charjabug", fast: "Chispa", charged1: "Rayo X", charged2: "Descarga" },
+                { img: "images/placeholderPokemon.png", name: "Sableye", fast: "Garra Umbría", charged1: "Puño Certero", charged2: "Bola Sombra" },
+                { img: "images/placeholderPokemon.png", name: "Azumarill", fast: "Burbuja", charged1: "Rayo Hielo", charged2: "Carantoña" }
+            ]
+        },
+        {
+            name: "Jugador 7",
+            code: "7890 1234 5678",
+            avatar: "images/placeholderAvatar.png",
+            grades: { cobertura: "D", seguridad: "C", consistencia: "B", aguante: "B" },
+            team: [
+                { img: "images/placeholderPokemon.png", name: "Machamp", fast: "Contraataque", charged1: "Puño Dinám.", charged2: "A Bocajarro" },
+                { img: "images/placeholderPokemon.png", name: "Pidgeot", fast: "Ala de Acero", charged1: "Pájaro Osado", charged2: "Vendaval" },
+                { img: "images/placeholderPokemon.png", name: "Poliwrath", fast: "Disparo Lodo", charged1: "Puño Dinám.", charged2: "Rayo Hielo" },
+                { img: "images/placeholderPokemon.png", name: "Ariados", fast: "Puya Nociva", charged1: "A Bocajarro", charged2: "Hilo Venenoso" },
+                { img: "images/placeholderPokemon.png", name: "Steelix", fast: "Cola Dragón", charged1: "Pu. Certero", charged2: "Terremoto" },
+                { img: "images/placeholderPokemon.png", name: "Lanturn", fast: "Chispa", charged1: "Hidrobomba", charged2: "Rayo" }
+            ]
+        },
+        {
+            name: "Jugador 8",
+            code: "8901 2345 6789",
+            avatar: "images/placeholderAvatar.png",
+            grades: { cobertura: "B", seguridad: "B", consistencia: "C", aguante: "A" },
+            team: [
+                { img: "images/placeholderPokemon.png", name: "Registeel", fast: "Cerrojo", charged1: "Onda Certera", charged2: "Lanzallamas" },
+                { img: "images/placeholderPokemon.png", name: "Altaria", fast: "Aliento Dragón", charged1: "Meteoro Dragón", charged2: "Pulso Umbrío" },
+                { img: "images/placeholderPokemon.png", name: "Swampert", fast: "Pistola Agua", charged1: "Hidrocañón", charged2: "Terremoto" },
+                { img: "images/placeholderPokemon.png", name: "Venusaur", fast: "Látigo Cepa", charged1: "Planta Feroz", charged2: "Bomba Lodo" },
+                { img: "images/placeholderPokemon.png", name: "Umbreon", fast: "Alarido", charged1: "Último Recurso", charged2: "Pulso Umbrío" },
+                { img: "images/placeholderPokemon.png", name: "Skarmory", fast: "Ala de Acero", charged1: "Pájaro Osado", charged2: "Ala de Acero" }
+            ]
+        }
+    ];
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
+    /* Matriz de resultados Round-robin. "W"=Victoria Limpia(3), "CW"=Victoria Cerrada(2), "CL"=Derrota Cerrada(1), "L"=Derrota Limpia(0), null = mismo jugador */
+    const RR_RESULTS = [
+      //  J1     J2     J3     J4     J5     J6     J7     J8
+        [null,  "W",   "W",   "L",   "W",   "W",   "W",   "L"  ],  // J1
+        ["L",   null,  "L",   "W",   "L",   "W",   "L",   "W"  ],  // J2
+        ["L",   "W",   null,  "W",   "L",   "L",   "W",   "W"  ],  // J3
+        ["W",   "L",   "L",   null,  "W",   "L",   "W",   "L"  ],  // J4
+        ["L",   "W",   "W",   "L",   null,  "W",   "W",   "W"  ],  // J5
+        ["L",   "L",   "W",   "W",   "L",   null,  "L",   "W"  ],  // J6
+        ["L",   "W",   "L",   "L",   "L",   "W",   null,  "W"  ],  // J7
+        ["W",   "L",   "L",   "W",   "L",   "L",   "L",   null ]   // J8
+    ];
 
-            reveals.forEach((el) => observer.observe(el));
+    /* ============================================================
+       CALIFICACIÓN → VALOR NUMÉRICO  (para gráfico de radar)
+       ============================================================ */
+    const GRADE_MAP = { A: 6, B: 5, C: 4, D: 3, E: 2, F: 1 };
+
+    /* ============================================================
+       RENDERIZAR TARJETAS DE JUGADORES
+       ============================================================ */
+    function renderPlayers() {
+        const grid = document.getElementById('playersGrid');
+        PLAYERS.forEach((p, i) => {
+            const card = document.createElement('div');
+            card.className = 'player-card';
+            card.innerHTML = `
+                <button class="player-header" onclick="togglePlayer(${i})" aria-expanded="false" aria-controls="playerDetail${i}">
+                    <span class="player-number">${i + 1}</span>
+                    <span class="player-name">${p.name}</span>
+                    <span class="player-arrow">▾</span>
+                </button>
+                <div class="player-detail" id="playerDetail${i}">
+                    <div class="player-info-row">
+                        <div class="player-avatar-wrap">
+                            <img src="${p.avatar}" alt="Avatar de ${p.name}" class="player-avatar">
+                        </div>
+                        <div class="player-meta">
+                            <h4>${p.name}</h4>
+                            <p class="trainer-code"><span>Código:</span> ${p.code}</p>
+                        </div>
+                        <div class="radar-wrap">
+                            <canvas id="radar${i}" width="340" height="260"></canvas>
+                        </div>
+                    </div>
+                    <div class="team-row">
+                        ${p.team.map(pk => `
+                            <div class="poke-card">
+                                <img src="${pk.img}" alt="${pk.name}" class="poke-img">
+                                <span class="poke-name">${pk.name}</span>
+                                <div class="poke-moves">
+                                    <span class="move fast-move">${pk.fast}</span>
+                                    <span class="move charged-move">${pk.charged1}</span>
+                                    <span class="move charged-move">${pk.charged2}</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
         });
+    }
+
+    /* ============================================================
+       ALTERNAR DETALLE DEL JUGADOR
+       ============================================================ */
+    function togglePlayer(index) {
+        const detail = document.getElementById(`playerDetail${index}`);
+        const btn = detail.previousElementSibling;
+        const isOpen = detail.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+        if (isOpen) drawRadar(index);
+    }
+
+    /* ============================================================
+       DIBUJAR GRÁFICO DE RADAR DE DIAMANTE  (Canvas 2D)
+       Rotado 45° para que parezca la forma de diamante de referencia.
+       ============================================================ */
+    function drawRadar(index) {
+        const canvas = document.getElementById(`radar${index}`);
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        const w = 340, h = 260;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.scale(dpr, dpr);
+
+        const cx = w / 2, cy = h / 2;  // 170, 130
+        const maxR = 90;
+        const g = PLAYERS[index].grades;
+        const vals = [
+            GRADE_MAP[g.cobertura]  || 1,
+            GRADE_MAP[g.seguridad]  || 1,
+            GRADE_MAP[g.consistencia] || 1,
+            GRADE_MAP[g.aguante]    || 1
+        ];
+        /* Ejes:  arriba=Cobertura, derecha=Seguridad, abajo=Consistencia, izquierda=Aguante */
+        const dirs = [ [0,-1], [1,0], [0,1], [-1,0] ];
+        const labels = ['Cobertura','Seguridad','Consistencia','Aguante'];
+
+        /* Líneas de cuadrícula de fondo (6 niveles) */
+        for (let lv = 1; lv <= 6; lv++) {
+            const r = (lv / 6) * maxR;
+            ctx.beginPath();
+            dirs.forEach((d, j) => {
+                const x = cx + d[0] * r;
+                const y = cy + d[1] * r;
+                j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            });
+            ctx.closePath();
+            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        }
+
+        /* Líneas de los ejes */
+        dirs.forEach(d => {
+            ctx.beginPath();
+            ctx.moveTo(cx, cy);
+            ctx.lineTo(cx + d[0] * maxR, cy + d[1] * maxR);
+            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+            ctx.stroke();
+        });
+
+        /* Diamante blanco exterior */
+        ctx.beginPath();
+        dirs.forEach((d, j) => {
+            const x = cx + d[0] * maxR;
+            const y = cy + d[1] * maxR;
+            j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.closePath();
+        ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        /* Forma de los datos */
+        ctx.beginPath();
+        vals.forEach((v, j) => {
+            const r = (v / 6) * maxR;
+            const x = cx + dirs[j][0] * r;
+            const y = cy + dirs[j][1] * r;
+            j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(250, 204, 21, 0.35)';
+        ctx.fill();
+        ctx.strokeStyle = '#facc15';
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+
+        /* Solo etiquetas — sin letras de calificación */
+        ctx.fillStyle = '#facc15';
+        ctx.font = '600 12px Outfit, sans-serif';
+        ctx.textAlign = 'center';
+
+        // Cobertura (top)
+        ctx.fillText(labels[0], cx, cy - maxR - 10);
+        // Seguridad (right)
+        ctx.textAlign = 'left';
+        ctx.fillText(labels[1], cx + maxR + 8, cy + 5);
+        // Consistencia (bottom)
+        ctx.textAlign = 'center';
+        ctx.fillText(labels[2], cx, cy + maxR + 18);
+        // Aguante (left)
+        ctx.textAlign = 'right';
+        ctx.fillText(labels[3], cx - maxR - 8, cy + 5);
+    }
+
+    /* ============================================================
+       RENDERIZAR TABLA ROUND-ROBIN
+       ============================================================ */
+    function renderRR() {
+        const tbody = document.querySelector('#rrTable tbody');
+        RR_RESULTS.forEach((row, i) => {
+            const tr = document.createElement('tr');
+            let cells = `<td class="rr-name">${PLAYERS[i].name}</td>`;
+            row.forEach((res, j) => {
+                if (res === null) {
+                    cells += `<td class="rr-self"></td>`;
+                } else if (res === 'W') {
+                    cells += `<td class="rr-win"><span class="result-icon win-icon" title="Victoria Limpia">W</span></td>`;
+                } else if (res === 'CW') {
+                    cells += `<td class="rr-win"><span class="result-icon cw-icon" title="Victoria Cerrada">CW</span></td>`;
+                } else if (res === 'CL') {
+                    cells += `<td class="rr-loss"><span class="result-icon cl-icon" title="Derrota Cerrada">CL</span></td>`;
+                } else {
+                    cells += `<td class="rr-loss"><span class="result-icon loss-icon" title="Derrota Limpia">L</span></td>`;
+                }
+            });
+            tr.innerHTML = cells;
+            tbody.appendChild(tr);
+        });
+
+        /* Actualizar encabezados de columna con nombres de jugadores */
+        const ths = document.querySelectorAll('#rrTable thead th');
+        PLAYERS.forEach((p, i) => { ths[i + 1].textContent = p.name; });
+    }
+
+    /* ============================================================
+       RENDERIZAR TABLA DE PUNTOS
+       ============================================================ */
+    function renderPoints() {
+        const stats = PLAYERS.map((p, i) => {
+            let w = 0, cw = 0, cl = 0, l = 0, pts = 0;
+            RR_RESULTS[i].forEach(r => {
+                if (r === 'W') { w++; pts += 3; }
+                else if (r === 'CW') { cw++; pts += 2; }
+                else if (r === 'CL') { cl++; pts += 1; }
+                else if (r === 'L') { l++; }
+            });
+            return { name: p.name, w, cw, cl, l, pts };
+        });
+        stats.sort((a, b) => b.pts - a.pts);
+
+        const tbody = document.querySelector('#pointsTable tbody');
+        stats.forEach((s, i) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td class="pts-rank">${i + 1}</td>
+                <td>${s.name}</td>
+                <td class="pts-win">${s.w}</td>
+                <td class="pts-cw">${s.cw}</td>
+                <td class="pts-cl">${s.cl}</td>
+                <td class="pts-loss">${s.l}</td>
+                <td class="pts-total">${s.pts}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    /* ============================================================
+       REVELAR AL DESPLAZARSE
+       ============================================================ */
+    function initReveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(el => observer.observe(el));
+    }
+
+    /* ============================================================
+       INICIAR
+       ============================================================ */
+    document.addEventListener('DOMContentLoaded', () => {
+        renderPlayers();
+        renderRR();
+        renderPoints();
+        initReveal();
+    });
     </script>
 </body>
 </html>
