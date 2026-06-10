@@ -46,31 +46,31 @@ const PLAYERS = [
         ]
     },
     {
-        name: "Jugador 4",
-        code: "4567 8901 2345",
-        avatar: "images/placeholderAvatar.png",
-        grades: { cobertura: "A", seguridad: "C", consistencia: "B", aguante: "B" },
+        name: "Hecvas11",
+        code: "1264 0548 4249",
+        avatar: "images/Hecvas11.png",
+        grades: { cobertura: "A", seguridad: "B", consistencia: "B", aguante: "B" },
         team: [
-            { img: "images/placeholderPokemon.png", name: "Cresselia", fast: "Psicocorte", charged1: "Rayo Lunar", charged2: "Bola de Hierba" },
-            { img: "images/placeholderPokemon.png", name: "Scrafty", fast: "Contraataque", charged1: "Puño Certero", charged2: "Pulso Umbrío" },
-            { img: "images/placeholderPokemon.png", name: "Ferrothorn", fast: "Prim. Bala", charged1: "Pu. Dinámico", charged2: "Bola Espejo" },
-            { img: "images/placeholderPokemon.png", name: "Whiscash", fast: "Disparo Lodo", charged1: "Terremoto", charged2: "Ventisca" },
-            { img: "images/placeholderPokemon.png", name: "Froslass", fast: "Nieve Polvo", charged1: "Avalancha", charged2: "Bola Sombra" },
-            { img: "images/placeholderPokemon.png", name: "Drapion", fast: "Colmillo Veneno", charged1: "Acua Cola", charged2: "Pu. Certero" }
+            { img: "images/Jellicent.png", name: "Jellicent", fast: "Infortunio", charged1: "Surf", charged2: "Bola Sombra" },
+            { img: "images/Azumarill.png", name: "Azumarill", fast: "Burbuja", charged1: "Juego Rudo", charged2: "Rayo Hielo" },
+            { img: "images/Malamar.png", name: "Malamar", fast: "Psicocorte", charged1: "Fuerza Bruta", charged2: "Juego Sucio" },
+            { img: "images/Annihilape.png", name: "Annihilape", fast: "Contrataque", charged1: "Puño Furia", charged2: "Puño Hielo" },
+            { img: "images/Feraligatr.png", name: "Feraligatr Obscuro", fast: "Garra Umbría", charged1: "Hidrocañón", charged2: "Rayo Hielo" },
+            { img: "images/Tinkaton.png", name: "Tinkaton", fast: "Viento Feérico", charged1: "Martillo Colosal", charged2: "Terratemblor" }
         ]
     },
     {
-        name: "Jugador 5",
-        code: "5678 9012 3456",
-        avatar: "images/placeholderAvatar.png",
-        grades: { cobertura: "B", seguridad: "B", consistencia: "A", aguante: "C" },
+        name: "LaloCasas",
+        code: "7006 0440 7495",
+        avatar: "images/LaloCasas.png",
+        grades: { cobertura: "A", seguridad: "A", consistencia: "B", aguante: "B" },
         team: [
-            { img: "images/placeholderPokemon.png", name: "Walrein", fast: "Nieve Polvo", charged1: "Colm. Hielo", charged2: "Terremoto" },
-            { img: "images/placeholderPokemon.png", name: "Talonflame", fast: "Incinerar", charged1: "Pájaro Osado", charged2: "Lanzallamas" },
-            { img: "images/placeholderPokemon.png", name: "Mandibuzz", fast: "Ala de Acero", charged1: "Pulso Umbrío", charged2: "Aéreo As" },
-            { img: "images/placeholderPokemon.png", name: "Deoxys Def", fast: "Contraataque", charged1: "Psicocarga", charged2: "Roca Afilada" },
-            { img: "images/placeholderPokemon.png", name: "Diggersby", fast: "Disparo Lodo", charged1: "Puñ. Fuego", charged2: "Terremoto" },
-            { img: "images/placeholderPokemon.png", name: "Nidoqueen", fast: "Puya Nociva", charged1: "Colm. Veneno", charged2: "Tierra Viva" }
+            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento", charged1: "Lanzallamas", charged2: "Ataque Aéreo"  },
+            { img: "images/Empoleon.png", name: "Empoleon", fast: "Eco Metálico", charged1: "Hidrocañón", charged2: "Pico Taladro" },
+            { img: "images/Ninetales.png", name: "Ninetales", fast: "Ascuas", charged1: "Meteorobola (fuego)", charged2: "Energibola" },
+            { img: "images/Tinkaton.png", name: "Tinkaton", fast: "Viento Feérico", charged1: "Martillo Colosal", charged2: "Terratemblor" },
+            { img: "images/Lickilicky.png", name: "Lickilicky", fast: "Desenrollar", charged1: "Golpe Cuerpo", charged2: "Bola Sombra" },
+            { img: "images/Seismitoad.png", name: "Seismitoad", fast: "Disparo Lodo", charged1: "Viento Hielo", charged2: "Tierra Viva" }
         ]
     },
     {
