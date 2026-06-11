@@ -58,6 +58,47 @@
                 <p class="section-sub">Haz clic en un entrenador para ver su equipo registrado.</p>
             </div>
 
+            <!-- Leyenda de movimientos -->
+            <div class="moves-legend" id="movesLegend">
+                <h4 class="moves-legend-title">📖 Guía de Movimientos</h4>
+                <div class="moves-legend-layout">
+                    <!-- Columna 1: Ejemplo -->
+                    <div class="legend-example-col">
+                        <div class="poke-card legend-poke-card">
+                            <img src="images/placeholderPokemon.png" alt="Ejemplo" class="poke-img">
+                            <span class="poke-name">Poke</span>
+                            <div class="poke-moves">
+                                <span class="move fast-move">Disparo de Lodo (3T)</span>
+                                <span class="move charged-move">Retribucion (7)</span>
+                                <span class="move charged-move">Bomba Fango (5-)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna 2: Explicaciones -->
+                    <div class="moves-legend-grid vertical-stack">
+                        <div class="legend-item">
+                            <div class="legend-desc">
+                                <strong>Ataque Rápido — Turnos</strong>
+                                <p>El número entre paréntesis indica la <em>duración en turnos</em> del movimiento rápido. Un turno equivale a 0.5 segundos.</p>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-desc">
+                                <strong>Ataque Cargado — Conteo de Básicos</strong>
+                                <p>El número indica <em>cuántos ataques rápidos</em> (básicos) se necesitan para cargar ese ataque cargado.</p>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-desc">
+                                <strong>El signo "−"</strong>
+                                <p>Cuando el conteo <em>no siempre es exacto</em>, el "−" indica que a veces se necesita uno menos (por energía sobrante del ciclo anterior).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="players-grid" id="playersGrid">
                 <!-- Los datos de los jugadores son renderizados por JS abajo -->
             </div>

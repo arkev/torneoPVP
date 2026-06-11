@@ -9,12 +9,12 @@ const PLAYERS = [
         avatar: "images/alonsopf89.png",
         grades: { cobertura: "C", seguridad: "D", consistencia: "A", aguante: "D" },
         team: [
-            { img: "images/Diglett.png", name: "Diglett", fast: "Disparo de Lodo", charged1: "Retribucion", charged2: "Bomba Fango" },
-            { img: "images/Sudowoodo.png", name: "Sudowoodo", fast: "Contraataque", charged1: "Abrecaminos", charged2: "Rayo Meteórico" },
-            { img: "images/Amoonguss.png", name: "Amoonguss", fast: "Ataque Finta", charged1: "Bomba Lodo", charged2: "Juego Sucio" },
-            { img: "images/Lapras.png", name: "Lapras", fast: "Vaho Helado", charged1: "Ventisca", charged2: "THidrobomba" },
-            { img: "images/Flareon.png", name: "Flareon", fast: "Giro Fuego", charged1: "Lanzallamas", charged2: "Supercalor" },
-            { img: "images/Heatmor.png", name: "Heatmor", fast: "Giro fuego", charged1: "Puño Incremento", charged2: "" }
+            { img: "images/Diglett.png", name: "Diglett", fast: "Disparo de Lodo (3T)", charged1: "Retribucion (7)", charged2: "Bomba Fango (5-)" },
+            { img: "images/Sudowoodo.png", name: "Sudowoodo", fast: "Contraataque (2T)", charged1: "Abrecaminos (8-)", charged2: "Rayo Meteórico (10)" },
+            { img: "images/Amoonguss.png", name: "Amoonguss", fast: "Ataque Finta (2T)", charged1: "Bomba Lodo (9-)", charged2: "Juego Sucio (7-)" },
+            { img: "images/Lapras.png", name: "Lapras", fast: "Vaho Helado (2T)", charged1: "Ventisca (15)", charged2: "Hidrobomba (15)" },
+            { img: "images/Flareon.png", name: "Flareon", fast: "Giro Fuego (3T)", charged1: "Lanzallamas (6-)", charged2: "Supercalor (6-)" },
+            { img: "images/Heatmor.png", name: "Heatmor", fast: "Giro Fuego (3T)", charged1: "Puño Incremento (4-)", charged2: "" }
         ]
     },
     {
@@ -23,12 +23,12 @@ const PLAYERS = [
         avatar: "images/Arkev77.png",
         grades: { cobertura: "A", seguridad: "B", consistencia: "B", aguante: "A" },
         team: [
-            { img: "images/Tinkaton.png", name: "Tinkaton", fast: "Viento Feérico", charged1: "Martillo Colosal", charged2: "Terratemblor" },
-            { img: "images/CorsolaG.png", name: "Corsola de Galar", fast: "Impresionar", charged1: "Tinieblas", charged2: "Joya de Luz" },
-            { img: "images/Diggersby.png", name: "Diggersby", fast: "Disparo Lodo", charged1: "Puño Fuego", charged2: "Arenas Ardientes" },
-            { img: "images/Feraligatr.png", name: "Feraligatr Obscuro", fast: "Garra Umbría", charged1: "Hidrocañón", charged2: "Rayo Hielo" },
-            { img: "images/registeel.png", name: "Registeel", fast: "Fijar Blanco", charged1: "Electrocañón", charged2: "Onda Certera" },
-            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento", charged1: "Lanzallamas", charged2: "Ataque Aéreo" }
+            { img: "images/Tinkaton.png", name: "Tinkaton", fast: "Viento Feérico (2T)", charged1: "Martillo Colosal (7)", charged2: "Terratemblor (7)" },
+            { img: "images/CorsolaG.png", name: "Corsola de Galar", fast: "Impresionar (3T)", charged1: "Tinieblas (5-)", charged2: "Joya de Luz (5)" },
+            { img: "images/Diggersby.png", name: "Diggersby", fast: "Disparo Lodo (2T)", charged1: "Puño Fuego (5-)", charged2: "Arenas Ardientes (6-)" },
+            { img: "images/Feraligatr.png", name: "Feraligatr Obscuro", fast: "Garra Umbría (2T)", charged1: "Hidrocañón (5)", charged2: "Rayo Hielo (7)" },
+            { img: "images/registeel.png", name: "Registeel", fast: "Fijar Blanco (1T)", charged1: "Electrocañón (16)", charged2: "Onda Certera (15)" },
+            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento (1T)", charged1: "Lanzallamas (14)", charged2: "Ataque Aéreo (12-)" }
         ]
     },
     {
@@ -37,12 +37,12 @@ const PLAYERS = [
         avatar: "images/DizzyJuanito19.png",
         grades: { cobertura: "A", seguridad: "B", consistencia: "A", aguante: "B" },
         team: [
-            { img: "images/Lickilicky.png", name: "Lickilicky", fast: "Desenrollar", charged1: "Golpe Cuerpo", charged2: "Bola Sombra" },
-            { img: "images/Fearow.png", name: "Fearow", fast: "Picotazo", charged1: "Taladradora", charged2: "Pico Taladro" },
-            { img: "images/Quagsire.png", name: "Quagsire", fast: "Disparo Lodo", charged1: "Acua Cola", charged2: "Roca Afilada" },
-            { img: "images/Aromatisse.png", name: "Aromatisse", fast: "Viento Feérico", charged1: "Psicocarga", charged2: "Fuerza Lunar" },
-            { img: "images/Diggersby.png", name: "Diggersby", fast: "Disparo Lodo", charged1: "Puño Fuego", charged2: "Arenas Ardientes" },
-            { img: "images/Dusclops.png", name: "Dusclops", fast: "Infortunio", charged1: "Puño Hielo", charged2: "Puño Sombra" }
+            { img: "images/Lickilicky.png", name: "Lickilicky", fast: "Desenrollar (3T)", charged1: "Golpe Cuerpo (3)", charged2: "Bola Sombra (5)" },
+            { img: "images/Fearow.png", name: "Fearow", fast: "Picotazo (2T)", charged1: "Taladradora (5)", charged2: "Pico Taladro (5)" },
+            { img: "images/Quagsire.png", name: "Quagsire", fast: "Disparo Lodo (2T)", charged1: "Acua Cola (4)", charged2: "Roca Afilada (6)" },
+            { img: "images/Aromatisse.png", name: "Aromatisse", fast: "Viento Feérico (2T)", charged1: "Psicocarga (5)", charged2: "Fuerza Lunar (8)" },
+            { img: "images/Diggersby.png", name: "Diggersby", fast: "Disparo Lodo (2T)", charged1: "Puño Fuego (5-)", charged2: "Arenas Ardientes (6)" },
+            { img: "images/Dusclops.png", name: "Dusclops", fast: "Infortunio (3T)", charged1: "Puño Hielo (4-)", charged2: "Puño Sombra (3)" }
         ]
     },
     {
@@ -51,12 +51,12 @@ const PLAYERS = [
         avatar: "images/Hecvas11.png",
         grades: { cobertura: "A", seguridad: "B", consistencia: "B", aguante: "B" },
         team: [
-            { img: "images/Jellicent.png", name: "Jellicent", fast: "Infortunio", charged1: "Surf", charged2: "Bola Sombra" },
-            { img: "images/Azumarill.png", name: "Azumarill", fast: "Burbuja", charged1: "Juego Rudo", charged2: "Rayo Hielo" },
-            { img: "images/Malamar.png", name: "Malamar", fast: "Psicocorte", charged1: "Fuerza Bruta", charged2: "Juego Sucio" },
-            { img: "images/Annihilape.png", name: "Annihilape", fast: "Contrataque", charged1: "Puño Furia", charged2: "Puño Hielo" },
-            { img: "images/Feraligatr.png", name: "Feraligatr Obscuro", fast: "Garra Umbría", charged1: "Hidrocañón", charged2: "Rayo Hielo" },
-            { img: "images/Tinkaton.png", name: "Tinkaton", fast: "Viento Feérico", charged1: "Martillo Colosal", charged2: "Terratemblor" }
+            { img: "images/Jellicent.png", name: "Jellicent", fast: "Infortunio (3T)", charged1: "Surf (4-)", charged2: "Bola Sombra (5)" },
+            { img: "images/Azumarill.png", name: "Azumarill", fast: "Burbuja (3T)", charged1: "Juego Rudo (6-)", charged2: "Rayo Hielo (5)" },
+            { img: "images/Malamar.png", name: "Malamar", fast: "Psicocorte (2T)", charged1: "Fuerza Bruta (5-)", charged2: "Juego Sucio (5)" },
+            { img: "images/Annihilape.png", name: "Annihilape", fast: "Contrataque (2T)", charged1: "Puño Furia (5)", charged2: "Puño Hielo (6)" },
+            { img: "images/Feraligatr.png", name: "Feraligatr Obscuro", fast: "Garra Umbría (2T)", charged1: "Hidrocañón (5)", charged2: "Rayo Hielo (7)" },
+            { img: "images/Tinkaton.png", name: "Tinkaton", fast: "Viento Feérico (2T)", charged1: "Martillo Colosal (7)", charged2: "Terratemblor (7)" }
         ]
     },
     {
@@ -65,12 +65,12 @@ const PLAYERS = [
         avatar: "images/LaloCasas.png",
         grades: { cobertura: "A", seguridad: "A", consistencia: "B", aguante: "B" },
         team: [
-            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento", charged1: "Lanzallamas", charged2: "Ataque Aéreo"  },
-            { img: "images/Empoleon.png", name: "Empoleon", fast: "Eco Metálico", charged1: "Hidrocañón", charged2: "Pico Taladro" },
-            { img: "images/Ninetales.png", name: "Ninetales", fast: "Ascuas", charged1: "Meteorobola (fuego)", charged2: "Energibola" },
-            { img: "images/Tinkaton.png", name: "Tinkaton", fast: "Viento Feérico", charged1: "Martillo Colosal", charged2: "Terratemblor" },
-            { img: "images/Lickilicky.png", name: "Lickilicky", fast: "Desenrollar", charged1: "Golpe Cuerpo", charged2: "Bola Sombra" },
-            { img: "images/Seismitoad.png", name: "Seismitoad", fast: "Disparo Lodo", charged1: "Viento Hielo", charged2: "Tierra Viva" }
+            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento (1T)", charged1: "Lanzallamas (14)", charged2: "Ataque Aéreo (12-)" },
+            { img: "images/Empoleon.png", name: "Empoleon", fast: "Eco Metálico (2T)", charged1: "Hidrocañón (5)", charged2: "Pico Taladro (5)" },
+            { img: "images/Ninetales.png", name: "Ninetales", fast: "Ascuas (2T)", charged1: "Meteorobola (fuego) (4)", charged2: "Energibola (7-)" },
+            { img: "images/Tinkaton.png", name: "Tinkaton", fast: "Viento Feérico (2T)", charged1: "Martillo Colosal (7)", charged2: "Terratemblor (7)" },
+            { img: "images/Lickilicky.png", name: "Lickilicky", fast: "Desenrollar (3T)", charged1: "Golpe Cuerpo (3)", charged2: "Bola Sombra (5)" },
+            { img: "images/Seismitoad.png", name: "Seismitoad", fast: "Disparo Lodo (2T)", charged1: "Viento Hielo (5-)", charged2: "Tierra Viva (6)" }
         ]
     },
     {
@@ -79,12 +79,12 @@ const PLAYERS = [
         avatar: "images/placeholderAvatar.png",
         grades: { cobertura: "C", seguridad: "A", consistencia: "C", aguante: "A" },
         team: [
-            { img: "images/placeholderPokemon.png", name: "Tropius", fast: "Ala de Acero", charged1: "Hoja Mágica", charged2: "Aéreo As" },
-            { img: "images/placeholderPokemon.png", name: "Munchlax", fast: "Lengüetazo", charged1: "Golpe Cuerpo", charged2: "Terratem." },
-            { img: "images/placeholderPokemon.png", name: "Carbink", fast: "Roca Afilada", charged1: "Fuerza Lunar", charged2: "Pu. Dinámico" },
-            { img: "images/placeholderPokemon.png", name: "Charjabug", fast: "Chispa", charged1: "Rayo X", charged2: "Descarga" },
-            { img: "images/placeholderPokemon.png", name: "Sableye", fast: "Garra Umbría", charged1: "Puño Certero", charged2: "Bola Sombra" },
-            { img: "images/placeholderPokemon.png", name: "Azumarill", fast: "Burbuja", charged1: "Rayo Hielo", charged2: "Carantoña" }
+            { img: "images/placeholderPokemon.png", name: "Tropius", fast: "Ala de Acero (2T)", charged1: "Hoja Mágica (6)", charged2: "Aéreo As (8-)" },
+            { img: "images/placeholderPokemon.png", name: "Munchlax", fast: "Lengüetazo (1T)", charged1: "Golpe Cuerpo (12)", charged2: "Terratem. (20)" },
+            { img: "images/placeholderPokemon.png", name: "Carbink", fast: "Roca Afilada (2T)", charged1: "Fuerza Lunar (14)", charged2: "Pu. Dinámico (10)" },
+            { img: "images/placeholderPokemon.png", name: "Charjabug", fast: "Chispa (2T)", charged1: "Rayo X (5-)", charged2: "Descarga (6)" },
+            { img: "images/placeholderPokemon.png", name: "Sableye", fast: "Garra Umbría (2T)", charged1: "Puño Certero (5)", charged2: "Bola Sombra (8-)" },
+            { img: "images/placeholderPokemon.png", name: "Azumarill", fast: "Burbuja (3T)", charged1: "Rayo Hielo (5)", charged2: "Carantoña (6-)" }
         ]
     },
     {
@@ -93,12 +93,12 @@ const PLAYERS = [
         avatar: "images/placeholderAvatar.png",
         grades: { cobertura: "D", seguridad: "C", consistencia: "B", aguante: "B" },
         team: [
-            { img: "images/placeholderPokemon.png", name: "Machamp", fast: "Contraataque", charged1: "Puño Dinám.", charged2: "A Bocajarro" },
-            { img: "images/placeholderPokemon.png", name: "Pidgeot", fast: "Ala de Acero", charged1: "Pájaro Osado", charged2: "Vendaval" },
-            { img: "images/placeholderPokemon.png", name: "Poliwrath", fast: "Disparo Lodo", charged1: "Puño Dinám.", charged2: "Rayo Hielo" },
-            { img: "images/placeholderPokemon.png", name: "Ariados", fast: "Puya Nociva", charged1: "A Bocajarro", charged2: "Hilo Venenoso" },
-            { img: "images/placeholderPokemon.png", name: "Steelix", fast: "Cola Dragón", charged1: "Pu. Certero", charged2: "Terremoto" },
-            { img: "images/placeholderPokemon.png", name: "Lanturn", fast: "Chispa", charged1: "Hidrobomba", charged2: "Rayo" }
+            { img: "images/placeholderPokemon.png", name: "Machamp", fast: "Contraataque (2T)", charged1: "Puño Dinám. (8-)", charged2: "A Bocajarro (7-)" },
+            { img: "images/placeholderPokemon.png", name: "Pidgeot", fast: "Ala de Acero (2T)", charged1: "Pájaro Osado (10-)", charged2: "Vendaval (11)" },
+            { img: "images/placeholderPokemon.png", name: "Poliwrath", fast: "Disparo Lodo (2T)", charged1: "Puño Dinám. (6)", charged2: "Rayo Hielo (7-)" },
+            { img: "images/placeholderPokemon.png", name: "Ariados", fast: "Puya Nociva (2T)", charged1: "A Bocajarro (7-)", charged2: "Hilo Venenoso (6)" },
+            { img: "images/placeholderPokemon.png", name: "Steelix", fast: "Cola Dragón (3T)", charged1: "Pu. Certero (4-)", charged2: "Terremoto (6-)" },
+            { img: "images/placeholderPokemon.png", name: "Lanturn", fast: "Chispa (2T)", charged1: "Hidrobomba (10-)", charged2: "Rayo (8-)" }
         ]
     },
     {
@@ -107,12 +107,12 @@ const PLAYERS = [
         avatar: "images/placeholderAvatar.png",
         grades: { cobertura: "B", seguridad: "B", consistencia: "C", aguante: "A" },
         team: [
-            { img: "images/placeholderPokemon.png", name: "Registeel", fast: "Cerrojo", charged1: "Onda Certera", charged2: "Lanzallamas" },
-            { img: "images/placeholderPokemon.png", name: "Altaria", fast: "Aliento Dragón", charged1: "Meteoro Dragón", charged2: "Pulso Umbrío" },
-            { img: "images/placeholderPokemon.png", name: "Swampert", fast: "Pistola Agua", charged1: "Hidrocañón", charged2: "Terremoto" },
-            { img: "images/placeholderPokemon.png", name: "Venusaur", fast: "Látigo Cepa", charged1: "Planta Feroz", charged2: "Bomba Lodo" },
-            { img: "images/placeholderPokemon.png", name: "Umbreon", fast: "Alarido", charged1: "Último Recurso", charged2: "Pulso Umbrío" },
-            { img: "images/placeholderPokemon.png", name: "Skarmory", fast: "Ala de Acero", charged1: "Pájaro Osado", charged2: "Ala de Acero" }
+            { img: "images/placeholderPokemon.png", name: "Registeel", fast: "Cerrojo (1T)", charged1: "Onda Certera (15)", charged2: "Lanzallamas (11)" },
+            { img: "images/placeholderPokemon.png", name: "Altaria", fast: "Aliento Dragón (1T)", charged1: "Meteoro Dragón (17-)", charged2: "Pulso Umbrío (13-)" },
+            { img: "images/placeholderPokemon.png", name: "Swampert", fast: "Pistola Agua (1T)", charged1: "Hidrocañón (14-)", charged2: "Terremoto (22)" },
+            { img: "images/placeholderPokemon.png", name: "Venusaur", fast: "Látigo Cepa (2T)", charged1: "Planta Feroz (7-)", charged2: "Bomba Lodo (8-)" },
+            { img: "images/placeholderPokemon.png", name: "Umbreon", fast: "Alarido (3T)", charged1: "Último Recurso (5-)", charged2: "Pulso Umbrío (4)" },
+            { img: "images/placeholderPokemon.png", name: "Skarmory", fast: "Ala de Acero (2T)", charged1: "Pájaro Osado (10-)", charged2: "Ala de Acero (9-)" }
         ]
     }
 ];
