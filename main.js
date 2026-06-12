@@ -129,25 +129,25 @@ const MOVE_TYPES = {
     "Impactrueno": "Eléctrico"
 };
 
-const TYPE_EMOJIS = {
-    "Normal": "⚪",
-    "Fuego": "🔥",
-    "Agua": "💧",
-    "Planta": "🌿",
-    "Eléctrico": "⚡",
-    "Hielo": "❄️",
-    "Lucha": "🥊",
-    "Veneno": "☠️",
-    "Tierra": "🏜️",
-    "Volador": "🌪️",
-    "Psíquico": "🔮",
-    "Bicho": "🐛",
-    "Roca": "🪨",
-    "Fantasma": "👻",
-    "Dragón": "🐉",
-    "Siniestro": "🌑",
-    "Acero": "⚙️",
-    "Hada": "✨"
+const TYPE_ICONS = {
+    "Normal": "circle",
+    "Fuego": "local_fire_department",
+    "Agua": "water_drop",
+    "Planta": "eco",
+    "Eléctrico": "bolt",
+    "Hielo": "ac_unit",
+    "Lucha": "sports_martial_arts",
+    "Veneno": "science",
+    "Tierra": "landscape",
+    "Volador": "air",
+    "Psíquico": "psychology",
+    "Bicho": "bug_report",
+    "Roca": "terrain",
+    "Fantasma": "visibility_off",
+    "Dragón": "brightness_high",
+    "Siniestro": "dark_mode",
+    "Acero": "settings",
+    "Hada": "auto_awesome"
 };
 
 const TYPE_COLORS = {
@@ -171,7 +171,7 @@ const TYPE_COLORS = {
     "Hada": "#D685AD"
 };
 
-function getMoveEmoji(moveStr) {
+function getMoveIconHtml(moveStr) {
     if (!moveStr) return "";
     let type = "Normal";
     for (let key in MOVE_TYPES) {
@@ -180,7 +180,8 @@ function getMoveEmoji(moveStr) {
             break;
         }
     }
-    return TYPE_EMOJIS[type] || "⚪";
+    const iconName = TYPE_ICONS[type] || "circle";
+    return `<span class="material-symbols-outlined move-icon">${iconName}</span>`;
 }
 const PLAYERS = [
     {
@@ -354,9 +355,9 @@ function renderPlayers() {
                         <img src="${pk.img}" alt="${pk.name}" class="poke-img">
                         <span class="poke-name">${pk.name}</span>
                         <div class="poke-moves">
-                            <span class="move fast-move">${getMoveEmoji(pk.fast)} ${pk.fast}</span>
-                            ${pk.charged1 ? `<span class="move charged-move">${getMoveEmoji(pk.charged1)} ${pk.charged1}</span>` : ''}
-                            ${pk.charged2 ? `<span class="move charged-move">${getMoveEmoji(pk.charged2)} ${pk.charged2}</span>` : ''}
+                            <span class="move fast-move">${getMoveIconHtml(pk.fast)} ${pk.fast}</span>
+                            ${pk.charged1 ? `<span class="move charged-move">${getMoveIconHtml(pk.charged1)} ${pk.charged1}</span>` : ''}
+                            ${pk.charged2 ? `<span class="move charged-move">${getMoveIconHtml(pk.charged2)} ${pk.charged2}</span>` : ''}
                         </div>
                     </div>
                 `).join('')}
