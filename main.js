@@ -45,7 +45,7 @@ const POKEMON_TYPES = {
 const MOVE_TYPES = {
     "Disparo de Lodo": "Tierra",
     "Retribucion": "Normal",
-    "Bomba Fango": "Veneno",
+    "Bomba Fango": "Tierra",
     "Contraataque": "Lucha",
     "Abrecaminos": "Planta",
     "Rayo Meteórico": "Roca",
@@ -137,14 +137,14 @@ const TYPE_ICONS = {
     "Eléctrico": "bolt",
     "Hielo": "ac_unit",
     "Lucha": "sports_martial_arts",
-    "Veneno": "science",
+    "Veneno": "Experiment",
     "Tierra": "landscape",
-    "Volador": "air",
-    "Psíquico": "psychology",
+    "Volador": "Flight",
+    "Psíquico": "Neurology",
     "Bicho": "bug_report",
-    "Roca": "terrain",
-    "Fantasma": "visibility_off",
-    "Dragón": "brightness_high",
+    "Roca": "landslide",
+    "Fantasma": "Skull",
+    "Dragón": "Kanji_Alcohol",
     "Siniestro": "dark_mode",
     "Acero": "settings",
     "Hada": "auto_awesome"
@@ -301,14 +301,14 @@ const PLAYERS = [
 /* Matriz de resultados Round-robin. "W"=Victoria Limpia(3), "CW"=Victoria Cerrada(2), "CL"=Derrota Cerrada(1), "L"=Derrota Limpia(0), null = mismo jugador */
 const RR_RESULTS = [
     //  J1     J2     J3     J4     J5     J6     J7     J8
-    [null, "W", "CW", "L", "W", "W", "W", "L"],  // J1
-    ["L", null, "L", "CW", "L", "CW", "CL", "W"],  // J2
-    ["CL", "CW", null, "CW", "CL", "L", "W", "W"],  // J3
-    ["CW", "CL", "CL", null, "CW", "CL", "W", "L"],  // J4
-    ["CL", "CW", "CW", "CL", null, "CW", "CW", "W"],  // J5
-    ["CL", "CL", "CW", "CW", "CL", null, "CL", "CW"],  // J6
-    ["CL", "W", "L", "L", "L", "W", null, "W"],  // J7
-    ["W", "CL", "L", "W", "CL", "L", "L", null]   // J8
+    [null, "", "", "", "", "", "", ""],  // J1
+    ["", null, "", "", "", "", "", ""],  // J2
+    ["", "", null, "", "", "", "", ""],  // J3
+    ["", "", "", null, "", "", "", ""],  // J4
+    ["", "", "", "", null, "", "", ""],  // J5
+    ["", "", "", "", "", null, "", ""],  // J6
+    ["", "", "", "", "", "", null, ""],  // J7
+    ["", "", "", "", "", "", "", null]   // J8
 ];
 
 /* ============================================================
@@ -495,8 +495,10 @@ function renderRR() {
                 cells += `<td class="rr-win"><span class="result-icon cw-icon" title="Victoria Cerrada">VC</span></td>`;
             } else if (res === 'CL') {
                 cells += `<td class="rr-loss"><span class="result-icon cl-icon" title="Derrota Cerrada">DC</span></td>`;
-            } else {
+            } else if (res === 'L') {
                 cells += `<td class="rr-loss"><span class="result-icon loss-icon" title="Derrota Limpia">D</span></td>`;
+            } else {
+                cells += `<td class="rr-pending"><span class="result-icon pending-icon" title="Pendiente">-</span></td>`;
             }
         });
         tr.innerHTML = cells;
