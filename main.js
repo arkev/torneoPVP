@@ -2,6 +2,186 @@
    DATOS DE JUGADORES — Edita este objeto para actualizar toda la página.
    Escala de calificación: A (mejor) → F (peor). Se mapea a 6→1 para el gráfico.
    ============================================================ */
+const POKEMON_TYPES = {
+    "Diglett": ["Tierra"],
+    "Sudowoodo": ["Roca"],
+    "Amoonguss": ["Planta", "Veneno"],
+    "Lapras": ["Agua", "Hielo"],
+    "Flareon": ["Fuego"],
+    "Heatmor": ["Fuego"],
+    "Tinkaton": ["Hada", "Acero"],
+    "Corsola de Galar": ["Fantasma"],
+    "Diggersby": ["Normal", "Tierra"],
+    "Feraligatr Obscuro": ["Agua"],
+    "Registeel": ["Acero"],
+    "Altaria": ["Dragón", "Volador"],
+    "Lickilicky": ["Normal"],
+    "Fearow": ["Normal", "Volador"],
+    "Quagsire": ["Agua", "Tierra"],
+    "Aromatisse": ["Hada"],
+    "Dusclops": ["Fantasma"],
+    "Jellicent": ["Agua", "Fantasma"],
+    "Azumarill": ["Agua", "Hada"],
+    "Malamar": ["Siniestro", "Psíquico"],
+    "Annihilape": ["Lucha", "Fantasma"],
+    "Feraligatr": ["Agua"],
+    "Empoleon": ["Agua", "Acero"],
+    "Ninetales": ["Fuego"],
+    "Seismitoad": ["Agua", "Tierra"],
+    "Gastrodon": ["Agua", "Tierra"],
+    "Seaking": ["Agua"],
+    "Charjabug": ["Bicho", "Eléctrico"],
+    "Skeledirge": ["Fuego", "Fantasma"],
+    "Lanturn": ["Agua", "Eléctrico"],
+    "Cresselia": ["Psíquico"],
+    "Swampert": ["Agua", "Tierra"],
+    "Venusaur": ["Planta", "Veneno"],
+    "Umbreon": ["Siniestro"],
+    "Skarmory": ["Acero", "Volador"],
+    "Stunfisk": ["Tierra", "Eléctrico"],
+    "Poke": ["Normal"] // For the legend
+};
+
+const MOVE_TYPES = {
+    "Disparo de Lodo": "Tierra",
+    "Retribucion": "Normal",
+    "Bomba Fango": "Veneno",
+    "Contraataque": "Lucha",
+    "Abrecaminos": "Planta",
+    "Rayo Meteórico": "Roca",
+    "Ataque Finta": "Siniestro",
+    "Bomba Lodo": "Veneno",
+    "Juego Sucio": "Siniestro",
+    "Vaho Helado": "Hielo",
+    "Ventisca": "Hielo",
+    "Hidrobomba": "Agua",
+    "Giro Fuego": "Fuego",
+    "Lanzallamas": "Fuego",
+    "Supercalor": "Fuego",
+    "Puño Incremento": "Lucha",
+    "Viento Feérico": "Hada",
+    "Martillo Colosal": "Acero",
+    "Terratemblor": "Tierra",
+    "Impresionar": "Fantasma",
+    "Tinieblas": "Fantasma",
+    "Joya de Luz": "Roca",
+    "Disparo Lodo": "Tierra",
+    "Puño Fuego": "Fuego",
+    "Arenas Ardientes": "Tierra",
+    "Garra Umbría": "Fantasma",
+    "Hidrocañón": "Agua",
+    "Rayo Hielo": "Hielo",
+    "Fijar Blanco": "Normal",
+    "Electrocañón": "Eléctrico",
+    "Onda Certera": "Lucha",
+    "Dragoaliento": "Dragón",
+    "Ataque Aéreo": "Volador",
+    "Desenrollar": "Roca",
+    "Golpe Cuerpo": "Normal",
+    "Bola Sombra": "Fantasma",
+    "Picotazo": "Volador",
+    "Taladradora": "Tierra",
+    "Pico Taladro": "Volador",
+    "Acua Cola": "Agua",
+    "Roca Afilada": "Roca",
+    "Psicocarga": "Psíquico",
+    "Fuerza Lunar": "Hada",
+    "Puño Hielo": "Hielo",
+    "Puño Sombra": "Fantasma",
+    "Infortunio": "Fantasma",
+    "Surf": "Agua",
+    "Burbuja": "Agua",
+    "Juego Rudo": "Hada",
+    "Psicocorte": "Psíquico",
+    "Fuerza Bruta": "Lucha",
+    "Contrataque": "Lucha",
+    "Puño Furia": "Fantasma",
+    "Eco Metálico": "Acero",
+    "Ascuas": "Fuego",
+    "Meteorobola (fuego)": "Fuego",
+    "Energibola": "Planta",
+    "Viento Hielo": "Hielo",
+    "Tierra Viva": "Tierra",
+    "Bofetón lodo": "Tierra",
+    "Golpe cuerpo": "Normal",
+    "Tierra viva": "Tierra",
+    "Voltiocambio": "Eléctrico",
+    "Tijera x": "Bicho",
+    "Chispazo": "Eléctrico",
+    "A Bocajarro": "Lucha",
+    "Calcinacion": "Fuego",
+    "Anillo igneo": "Fuego",
+    "Rayo": "Eléctrico",
+    "Canto ardiente": "Fuego",
+    "Hierba lazo": "Planta",
+    "Cerrojo": "Normal",
+    "Aliento Dragón": "Dragón",
+    "Meteoro Dragón": "Dragón",
+    "Pulso Umbrío": "Siniestro",
+    "Pistola Agua": "Agua",
+    "Terremoto": "Tierra",
+    "Látigo Cepa": "Planta",
+    "Planta Feroz": "Planta",
+    "Alarido": "Siniestro",
+    "Último Recurso": "Normal",
+    "Pájaro Osado": "Volador",
+    "Ala de Acero": "Acero",
+    "Impactrueno": "Eléctrico"
+};
+
+const TYPE_EMOJIS = {
+    "Normal": "⚪",
+    "Fuego": "🔥",
+    "Agua": "💧",
+    "Planta": "🌿",
+    "Eléctrico": "⚡",
+    "Hielo": "❄️",
+    "Lucha": "🥊",
+    "Veneno": "☠️",
+    "Tierra": "🏜️",
+    "Volador": "🌪️",
+    "Psíquico": "🔮",
+    "Bicho": "🐛",
+    "Roca": "🪨",
+    "Fantasma": "👻",
+    "Dragón": "🐉",
+    "Siniestro": "🌑",
+    "Acero": "⚙️",
+    "Hada": "✨"
+};
+
+const TYPE_COLORS = {
+    "Normal": "#A8A77A",
+    "Fuego": "#EE8130",
+    "Agua": "#6390F0",
+    "Planta": "#7AC74C",
+    "Eléctrico": "#F7D02C",
+    "Hielo": "#96D9D6",
+    "Lucha": "#C22E28",
+    "Veneno": "#A33EA1",
+    "Tierra": "#E2BF65",
+    "Volador": "#A98FF3",
+    "Psíquico": "#F95587",
+    "Bicho": "#A6B91A",
+    "Roca": "#B6A136",
+    "Fantasma": "#735797",
+    "Dragón": "#6F35FC",
+    "Siniestro": "#705848",
+    "Acero": "#B7B7CE",
+    "Hada": "#D685AD"
+};
+
+function getMoveEmoji(moveStr) {
+    if (!moveStr) return "";
+    let type = "Normal";
+    for (let key in MOVE_TYPES) {
+        if (moveStr.toLowerCase().startsWith(key.toLowerCase())) {
+            type = MOVE_TYPES[key];
+            break;
+        }
+    }
+    return TYPE_EMOJIS[type] || "⚪";
+}
 const PLAYERS = [
     {
         name: "alonsopf89",
@@ -27,7 +207,7 @@ const PLAYERS = [
             { img: "images/CorsolaG.png", name: "Corsola de Galar", fast: "Impresionar (3T)", charged1: "Tinieblas (5-)", charged2: "Joya de Luz (5)" },
             { img: "images/Diggersby.png", name: "Diggersby", fast: "Disparo Lodo (2T)", charged1: "Puño Fuego (5-)", charged2: "Arenas Ardientes (6-)" },
             { img: "images/Feraligatr.png", name: "Feraligatr Obscuro", fast: "Garra Umbría (2T)", charged1: "Hidrocañón (5)", charged2: "Rayo Hielo (7)" },
-            { img: "images/registeel.png", name: "Registeel", fast: "Fijar Blanco (1T)", charged1: "Electrocañón (16)", charged2: "Onda Certera (15)" },
+            { img: "images/Stunfisk.png", name: "Stunfisk", fast: "Impactrueno (2T)", charged1: "Chispazo (5-)", charged2: "Bomba Fango (5)" },
             { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento (1T)", charged1: "Lanzallamas (14)", charged2: "Ataque Aéreo (12-)" }
         ]
     },
@@ -74,31 +254,31 @@ const PLAYERS = [
         ]
     },
     {
-        name: "Jugador 6",
-        code: "6789 0123 4567",
-        avatar: "images/placeholderAvatar.png",
-        grades: { cobertura: "C", seguridad: "A", consistencia: "C", aguante: "A" },
+        name: "PitterCruise",
+        code: "0370 2690 2075",
+        avatar: "images/PitterCruise.png",
+        grades: { cobertura: "A", seguridad: "B", consistencia: "A", aguante: "C" },
         team: [
-            { img: "images/placeholderPokemon.png", name: "Tropius", fast: "Ala de Acero (2T)", charged1: "Hoja Mágica (6)", charged2: "Aéreo As (8-)" },
-            { img: "images/placeholderPokemon.png", name: "Munchlax", fast: "Lengüetazo (1T)", charged1: "Golpe Cuerpo (12)", charged2: "Terratem. (20)" },
-            { img: "images/placeholderPokemon.png", name: "Carbink", fast: "Roca Afilada (2T)", charged1: "Fuerza Lunar (14)", charged2: "Pu. Dinámico (10)" },
-            { img: "images/placeholderPokemon.png", name: "Charjabug", fast: "Chispa (2T)", charged1: "Rayo X (5-)", charged2: "Descarga (6)" },
-            { img: "images/placeholderPokemon.png", name: "Sableye", fast: "Garra Umbría (2T)", charged1: "Puño Certero (5)", charged2: "Bola Sombra (8-)" },
-            { img: "images/placeholderPokemon.png", name: "Azumarill", fast: "Burbuja (3T)", charged1: "Rayo Hielo (5)", charged2: "Carantoña (6-)" }
+            { img: "images/Gastrodon.png", name: "Gastrodon", fast: "Bofetón lodo (3T)", charged1: "Golpe cuerpo (4-)", charged2: "Tierra viva (5)" },
+            { img: "images/Seaking.png", name: "Seaking", fast: "Picotazo (2T)", charged1: "Taladradora (5)", charged2: "Rayo hielo (6-)" },
+            { img: "images/Charjabug.png", name: "Charjabug", fast: "Voltiocambio (4T)", charged1: "Tijera x (3-)", charged2: "Chispazo (3-)" },
+            { img: "images/Annihilape.png", name: "Annihilape", fast: "Contrataque (2T)", charged1: "Puño Furia (6)", charged2: "A Bocajarro (8-)" },
+            { img: "images/Skeledirge.png", name: "Skeledirge", fast: "Calcinacion (5T)", charged1: "Anillo igneo (3-)", charged2: "Bola Sombra (3-)" },
+            { img: "images/Lanturn.png", name: "Lanturn", fast: "Chispa (2T)", charged1: "Surf (7-)", charged2: "Rayo (8)" }
         ]
     },
     {
-        name: "Jugador 7",
-        code: "7890 1234 5678",
-        avatar: "images/placeholderAvatar.png",
-        grades: { cobertura: "D", seguridad: "C", consistencia: "B", aguante: "B" },
+        name: "Arlekcking",
+        code: "4429 3064 6438",
+        avatar: "images/Arlekcking.png",
+        grades: { cobertura: "A", seguridad: "B", consistencia: "A", aguante: "B" },
         team: [
-            { img: "images/placeholderPokemon.png", name: "Machamp", fast: "Contraataque (2T)", charged1: "Puño Dinám. (8-)", charged2: "A Bocajarro (7-)" },
-            { img: "images/placeholderPokemon.png", name: "Pidgeot", fast: "Ala de Acero (2T)", charged1: "Pájaro Osado (10-)", charged2: "Vendaval (11)" },
-            { img: "images/placeholderPokemon.png", name: "Poliwrath", fast: "Disparo Lodo (2T)", charged1: "Puño Dinám. (6)", charged2: "Rayo Hielo (7-)" },
-            { img: "images/placeholderPokemon.png", name: "Ariados", fast: "Puya Nociva (2T)", charged1: "A Bocajarro (7-)", charged2: "Hilo Venenoso (6)" },
-            { img: "images/placeholderPokemon.png", name: "Steelix", fast: "Cola Dragón (3T)", charged1: "Pu. Certero (4-)", charged2: "Terremoto (6-)" },
-            { img: "images/placeholderPokemon.png", name: "Lanturn", fast: "Chispa (2T)", charged1: "Hidrobomba (10-)", charged2: "Rayo (8-)" }
+            { img: "images/Charjabug.png", name: "Charjabug", fast: "Voltiocambio (4T)", charged1: "Tijera x (3-)", charged2: "Chispazo (3-)" },
+            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento (1T)", charged1: "Lanzallamas (14)", charged2: "Ataque Aéreo (12-)" },
+            { img: "images/Jellicent.png", name: "Jellicent", fast: "Infortunio (3T)", charged1: "Surf (4-)", charged2: "Bola Sombra (4)" },
+            { img: "images/Skeledirge.png", name: "Skeledirge", fast: "Calcinacion (5T)", charged1: "Canto ardiente (3-)", charged2: "Bola Sombra (3-)" },
+            { img: "images/Feraligatr.png", name: "Feraligatr", fast: "Garra Umbría (2T)", charged1: "Hidrocañón (5)", charged2: "Rayo Hielo (7)" },
+            { img: "images/Cresselia.png", name: "Cresselia", fast: "Psicocorte (2T)", charged1: "Hierba lazo (6-)", charged2: "Fuerza Lunar (7-)" }
         ]
     },
     {
@@ -168,12 +348,15 @@ function renderPlayers() {
             <div class="team-row">
                 ${p.team.map(pk => `
                     <div class="poke-card">
+                        <div class="poke-types">
+                            ${(POKEMON_TYPES[pk.name] || []).map(t => `<span class="type-badge" style="background-color: ${TYPE_COLORS[t]}">${t}</span>`).join('')}
+                        </div>
                         <img src="${pk.img}" alt="${pk.name}" class="poke-img">
                         <span class="poke-name">${pk.name}</span>
                         <div class="poke-moves">
-                            <span class="move fast-move">${pk.fast}</span>
-                            <span class="move charged-move">${pk.charged1}</span>
-                            <span class="move charged-move">${pk.charged2}</span>
+                            <span class="move fast-move">${getMoveEmoji(pk.fast)} ${pk.fast}</span>
+                            ${pk.charged1 ? `<span class="move charged-move">${getMoveEmoji(pk.charged1)} ${pk.charged1}</span>` : ''}
+                            ${pk.charged2 ? `<span class="move charged-move">${getMoveEmoji(pk.charged2)} ${pk.charged2}</span>` : ''}
                         </div>
                     </div>
                 `).join('')}
