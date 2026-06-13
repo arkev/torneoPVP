@@ -3,7 +3,7 @@
    Escala de calificación: A (mejor) → F (peor). Se mapea a 6→1 para el gráfico.
    ============================================================ */
 const POKEMON_TYPES = {
-    "Diglett": ["Tierra"],
+    "Dugtrio": ["Tierra"],
     "Sudowoodo": ["Roca"],
     "Amoonguss": ["Planta", "Veneno"],
     "Lapras": ["Agua", "Hielo"],
@@ -195,9 +195,9 @@ const PLAYERS = [
         name: "alonsopf89",
         code: "5546 3274 8523",
         avatar: "images/alonsopf89.png",
-        grades: { cobertura: "C", seguridad: "D", consistencia: "A", aguante: "D" },
+        grades: { cobertura: "B", seguridad: "F", consistencia: "B", aguante: "D" },
         team: [
-            { img: "images/Diglett.png", name: "Diglett", fast: "Disparo de Lodo (3T)", charged1: "Retribucion (7)", charged2: "Bomba Fango (5-)" },
+            { img: "images/Dugtrio.png", name: "Dugtrio", fast: "Disparo de Lodo (3T)", charged1: "Retribucion (7)", charged2: "Bomba Fango (5-)" },
             { img: "images/Sudowoodo.png", name: "Sudowoodo", fast: "Contraataque (2T)", charged1: "Abrecaminos (8-)", charged2: "Rayo Meteórico (10)" },
             { img: "images/Amoonguss.png", name: "Amoonguss", fast: "Ataque Finta (2T)", charged1: "Bomba Lodo (9-)", charged2: "Juego Sucio (7-)" },
             { img: "images/Lapras.png", name: "Lapras", fast: "Vaho Helado (2T)", charged1: "Ventisca (15)", charged2: "Hidrobomba (15)" },
@@ -282,10 +282,10 @@ const PLAYERS = [
         grades: { cobertura: "A", seguridad: "B", consistencia: "A", aguante: "B" },
         team: [
             { img: "images/Charjabug.png", name: "Charjabug", fast: "Voltiocambio (4T)", charged1: "Tijera x (3-)", charged2: "Chispazo (3-)" },
-            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento (1T)", charged1: "Lanzallamas (14)", charged2: "Ataque Aéreo (12-)" },
+            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento (1T)", charged1: "Fuerza Lunar (15)", charged2: "Ataque Aéreo (12-)" },
             { img: "images/Jellicent.png", name: "Jellicent", fast: "Infortunio (3T)", charged1: "Surf (4-)", charged2: "Bola Sombra (4)" },
             { img: "images/Skeledirge.png", name: "Skeledirge", fast: "Calcinacion (5T)", charged1: "Canto ardiente (3-)", charged2: "Bola Sombra (3-)" },
-            { img: "images/Feraligatr.png", name: "Feraligatr", fast: "Garra Umbría (2T)", charged1: "Hidrocañón (5)", charged2: "Rayo Hielo (7)" },
+            { img: "images/Feraligatr.png", name: "Feraligatr Obscuro", fast: "Garra Umbría (2T)", charged1: "Hidrocañón (5)", charged2: "Rayo Hielo (7)" },
             { img: "images/Cresselia.png", name: "Cresselia", fast: "Psicocorte (2T)", charged1: "Hierba lazo (6-)", charged2: "Fuerza Lunar (7-)" }
         ]
     },
