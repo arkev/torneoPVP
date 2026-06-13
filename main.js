@@ -571,12 +571,61 @@ function initReveal() {
 }
 
 /* ============================================================
+   RENDERIZAR ESTADÍSTICAS DE EQUIPO
+   ============================================================ */
+function renderTeamStats() {
+    const grid = document.getElementById('statsGrid');
+    if (!grid) return;
+
+    const counts = {};
+    const images = {};
+    PLAYERS.forEach(p => {
+        p.team.forEach(pk => {
+            counts[pk.name] = (counts[pk.name] || 0) + 1;
+            images[pk.name] = pk.img;
+        });
+    });
+
+    const repeated = Object.keys(counts)
+        .filter(name => counts[name] > 1)
+        .map(name => ({
+            name: name,
+            count: counts[name],
+            img: images[name],
+            percentage: Math.round((counts[name] / PLAYERS.length) * 100)
+        }))
+        .sort((a, b) => b.count - a.count);
+
+    if (repeated.length === 0) {
+        grid.innerHTML = '<p>No hay Pokémon repetidos en los equipos.</p>';
+        return;
+    }
+
+    repeated.forEach(pk => {
+        const item = document.createElement('div');
+        item.className = 'stat-item';
+        item.innerHTML = `
+            <img src="${pk.img}" alt="${pk.name}" class="stat-img">
+            <div class="stat-info">
+                <h4>${pk.name}</h4>
+                <div class="stat-bar-container">
+                    <div class="stat-bar" style="width: ${pk.percentage}%; background-color: ${TYPE_COLORS[(POKEMON_TYPES[pk.name] || ['Normal'])[0]] || 'var(--primary-color)'}"></div>
+                </div>
+                <span class="stat-value">${pk.percentage}% (${pk.count}/${PLAYERS.length} equipos)</span>
+            </div>
+        `;
+        grid.appendChild(item);
+    });
+}
+
+/* ============================================================
    INICIAR
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
     initReveal();
     if (document.getElementById('playersGrid')) {
         renderPlayers();
+        renderTeamStats();
         renderRR();
         renderPoints();
     }
