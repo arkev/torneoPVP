@@ -39,6 +39,10 @@ const POKEMON_TYPES = {
     "Umbreon": ["Siniestro"],
     "Skarmory": ["Acero", "Volador"],
     "Stunfisk": ["Tierra", "Eléctrico"],
+    "Raichu de Alola": ["Psíquico", "Eléctrico"],
+    "Medicham": ["Lucha", "Psíquico"],
+    "Stunfisk de Galar": ["Tierra", "Acero"],
+    "Shiftry": ["Planta", "Siniestro"],
     "Poke": ["Normal"] // For the legend
 };
 
@@ -94,7 +98,6 @@ const MOVE_TYPES = {
     "Juego Rudo": "Hada",
     "Psicocorte": "Psíquico",
     "Fuerza Bruta": "Lucha",
-    "Contrataque": "Lucha",
     "Puño Furia": "Fantasma",
     "Eco Metálico": "Acero",
     "Ascuas": "Fuego",
@@ -126,7 +129,11 @@ const MOVE_TYPES = {
     "Último Recurso": "Normal",
     "Pájaro Osado": "Volador",
     "Ala de Acero": "Acero",
-    "Impactrueno": "Eléctrico"
+    "Impactrueno": "Eléctrico",
+    "Psíquico": "Psíquico",
+    "Avalancha": "Roca",
+    "Hoja Aguda": "Planta",
+    "Puño trueno": "Eléctrico"
 };
 
 const TYPE_ICONS = {
@@ -283,17 +290,17 @@ const PLAYERS = [
         ]
     },
     {
-        name: "Jugador 8",
-        code: "8901 2345 6789",
-        avatar: "images/placeholderAvatar.png",
-        grades: { cobertura: "B", seguridad: "B", consistencia: "C", aguante: "A" },
+        name: "Maxiatico",
+        code: "5297 8304 0223",
+        avatar: "images/Maxiatico.png",
+        grades: { cobertura: "A", seguridad: "C", consistencia: "A", aguante: "C" },
         team: [
-            { img: "images/placeholderPokemon.png", name: "Registeel", fast: "Cerrojo (1T)", charged1: "Onda Certera (15)", charged2: "Lanzallamas (11)" },
-            { img: "images/placeholderPokemon.png", name: "Altaria", fast: "Aliento Dragón (1T)", charged1: "Meteoro Dragón (17-)", charged2: "Pulso Umbrío (13-)" },
-            { img: "images/placeholderPokemon.png", name: "Swampert", fast: "Pistola Agua (1T)", charged1: "Hidrocañón (14-)", charged2: "Terremoto (22)" },
-            { img: "images/placeholderPokemon.png", name: "Venusaur", fast: "Látigo Cepa (2T)", charged1: "Planta Feroz (7-)", charged2: "Bomba Lodo (8-)" },
-            { img: "images/placeholderPokemon.png", name: "Umbreon", fast: "Alarido (3T)", charged1: "Último Recurso (5-)", charged2: "Pulso Umbrío (4)" },
-            { img: "images/placeholderPokemon.png", name: "Skarmory", fast: "Ala de Acero (2T)", charged1: "Pájaro Osado (10-)", charged2: "Ala de Acero (9-)" }
+            { img: "images/altaria.png", name: "Altaria", fast: "Dragoaliento (1T)", charged1: "Lanzallamas (14)", charged2: "Ataque Aéreo (12-)" },
+            { img: "images/Empoleon.png", name: "Empoleon", fast: "Eco Metálico (2T)", charged1: "Hidrocañón (5)", charged2: "Ventisca (5)" },
+            { img: "images/Raichu.png", name: "Raichu de Alola", fast: "Impactrueno (2T)", charged1: "Puño trueno (5-)", charged2: "Abrecaminos (5)" },
+            { img: "images/Medicham.png", name: "Medicham", fast: "Contrataque (2T)", charged1: "Puño hielo (7-)", charged2: "Psíquico (10-)" },
+            { img: "images/StunfiskG.png", name: "Stunfisk de Galar", fast: "Disparo Lodo (2T)", charged1: "Terremoto (8-)", charged2: "Avalancha (5)" },
+            { img: "images/Shiftry.png", name: "Shiftry", fast: "Alarido (3T)", charged1: "Hoja Aguda (3-)", charged2: "Juego Sucio (4-)" }
         ]
     }
 ];
