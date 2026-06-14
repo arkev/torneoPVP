@@ -482,12 +482,20 @@ footer {
 
 .moves-legend-title {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-main);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     letter-spacing: 0.02em;
+}
+
+.legend-subtitle {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.3rem;
 }
 
 .moves-legend-layout {

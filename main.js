@@ -430,6 +430,69 @@ function drawRadar(index) {
         ctx.stroke();
     }
 
+    /* Polígono del jugador */
+    ctx.beginPath();
+    dirs.forEach((d, j) => {
+        const r = (vals[j] / 6) * maxR;
+        const x = cx + d[0] * r;
+        const y = cy + d[1] * r;
+        j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(59, 130, 246, 0.4)';
+    ctx.fill();
+    ctx.strokeStyle = '#3b82f6';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    /* Etiquetas */
+    ctx.fillStyle = '#9ca3af';
+    ctx.font = '12px Inter';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(labels[0], cx, cy - maxR - 15);
+    ctx.fillText(labels[1], cx + maxR + 35, cy);
+    ctx.fillText(labels[2], cx, cy + maxR + 15);
+    ctx.fillText(labels[3], cx - maxR - 35, cy);
+}
+
+/* ============================================================
+   DIBUJAR GRÁFICO DE RADAR DE LEYENDA (Canvas 2D)
+   ============================================================ */
+function drawRadarLegend() {
+    const canvas = document.getElementById('radarLegend');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const w = 340, h = 260;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    ctx.scale(dpr, dpr);
+
+    const cx = w / 2, cy = h / 2;
+    const maxR = 90;
+    // Valores de ejemplo para la leyenda
+    const vals = [5, 4, 6, 3]; 
+    const dirs = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+    const labels = ['Cobertura', 'Seguridad', 'Consistencia', 'Aguante'];
+
+    /* Líneas de cuadrícula de fondo */
+    for (let lv = 1; lv <= 6; lv++) {
+        const r = (lv / 6) * maxR;
+        ctx.beginPath();
+        dirs.forEach((d, j) => {
+            const x = cx + d[0] * r;
+            const y = cy + d[1] * r;
+            j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.closePath();
+        ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+    }
+
     /* Líneas de los ejes */
     dirs.forEach(d => {
         ctx.beginPath();
@@ -628,5 +691,8 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTeamStats();
         renderRR();
         renderPoints();
+    }
+    if (document.getElementById('radarLegend')) {
+        drawRadarLegend();
     }
 });
