@@ -309,12 +309,12 @@ const PLAYERS = [
 const RR_RESULTS = [
     //  alonsopf89     Arkev77     DizzyJuanito19     Hecvas11     LaloCasas     PitterCruise     Arlekcking     Maxiatico
     [null, "", "", "", "", "", "", ""],  // alonsopf89
-    ["", null, "", "", "", "", "", ""],  // Arkev77
+    ["", null, "", "W", "", "", "", ""],  // Arkev77
     ["", "", null, "", "L", "", "", ""],  // DizzyJuanito19
-    ["", "", "", null, "", "", "", ""],  // Hecvas11
-    ["", "", "W", "", null, "", "", "W"],  // LaloCasas
+    ["", "L", "", null, "", "", "L", ""],  // Hecvas11
+    ["", "", "W", "", null, "", "W", "W"],  // LaloCasas
     ["", "", "", "", "", null, "", ""],  // PitterCruise
-    ["", "", "", "", "", "", null, ""],  // Arlekcking
+    ["", "", "", "W", "L", "", null, ""],  // Arlekcking
     ["", "", "", "", "L", "", "", null]   // Maxiatico
 ];
 
