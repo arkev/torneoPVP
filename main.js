@@ -597,9 +597,16 @@ function renderPoints() {
         return { name: p.name, w, cw, cl, l, pts };
     });
     stats.sort((a, b) => {
-        if (b.pts !== a.pts) return b.pts - a.pts;
+        const aFights = a.w + a.cw + a.cl + a.l;
+        const bFights = b.w + b.cw + b.cl + b.l;
+        // Sin combates van al final
+        if (aFights === 0 && bFights > 0) return 1;
+        if (bFights === 0 && aFights > 0) return -1;
+        // Medallero: W > CW > CL (desc), luego L asc (menos = mejor)
         if (b.w !== a.w) return b.w - a.w;
-        return b.cw - a.cw;
+        if (b.cw !== a.cw) return b.cw - a.cw;
+        if (b.cl !== a.cl) return b.cl - a.cl;
+        return a.l - b.l;
     });
 
     stats.forEach((s, i) => {
