@@ -308,14 +308,14 @@ const PLAYERS = [
 /* Matriz de resultados Round-robin. "W"=Victoria Limpia(3), "CW"=Victoria Cerrada(2), "CL"=Derrota Cerrada(1), "L"=Derrota Limpia(0), null = mismo jugador */
 const RR_RESULTS = [
     //  alonsopf89     Arkev77     DizzyJuanito19     Hecvas11     LaloCasas     PitterCruise     Arlekcking     Maxiatico
-    [null, "", "", "", "", "", "", ""],  // alonsopf89
-    ["", null, "", "W", "", "", "", ""],  // Arkev77
+    [null, "L", "", "", "L", "", "L", "L"],  // alonsopf89
+    ["W", null, "", "W", "", "", "L", ""],  // Arkev77
     ["", "", null, "", "L", "", "", ""],  // DizzyJuanito19
     ["", "L", "", null, "", "", "L", ""],  // Hecvas11
-    ["", "", "W", "", null, "", "W", "W"],  // LaloCasas
+    ["W", "", "W", "", null, "", "W", "W"],  // LaloCasas
     ["", "", "", "", "", null, "", ""],  // PitterCruise
-    ["", "", "", "W", "L", "", null, ""],  // Arlekcking
-    ["", "", "", "", "L", "", "", null]   // Maxiatico
+    ["W", "W", "", "W", "L", "", null, ""],  // Arlekcking
+    ["W", "", "", "", "L", "", "", null]   // Maxiatico
 ];
 
 /* ============================================================
