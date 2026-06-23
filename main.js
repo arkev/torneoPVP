@@ -313,8 +313,8 @@ const RR_RESULTS = [
     ["", "", null, "", "L", "", "", ""],  // DizzyJuanito19
     ["", "L", "", null, "", "", "L", ""],  // Hecvas11
     ["W", "W", "W", "", null, "W", "W", "W"],  // LaloCasas
-    ["", "CL", "", "", "L", null, "", ""],  // PitterCruise
-    ["W", "W", "", "W", "L", "", null, ""],  // Arlekcking
+    ["", "CL", "", "", "L", null, "L", ""],  // PitterCruise
+    ["W", "W", "", "W", "L", "W", null, ""],  // Arlekcking
     ["W", "", "", "", "L", "", "", null]   // Maxiatico
 ];
 
