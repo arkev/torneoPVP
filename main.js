@@ -309,9 +309,9 @@ const PLAYERS = [
 const RR_RESULTS = [
     //  alonsopf89     Arkev77     DizzyJuanito19     Hecvas11     LaloCasas     PitterCruise     Arlekcking     Maxiatico
     [null, "L", "L", "", "L", "", "L", "L"],  // alonsopf89
-    ["W", null, "", "W", "L", "CW", "L", ""],  // Arkev77
-    ["W", "", null, "", "L", "", "CW", ""],  // DizzyJuanito19
-    ["", "L", "", null, "", "", "L", ""],  // Hecvas11
+    ["W", null, "W", "W", "L", "CW", "L", ""],  // Arkev77
+    ["W", "L", null, "CW", "L", "", "CW", ""],  // DizzyJuanito19
+    ["", "L", "CL", null, "", "", "L", ""],  // Hecvas11
     ["W", "W", "W", "", null, "W", "W", "W"],  // LaloCasas
     ["", "CL", "", "", "L", null, "L", ""],  // PitterCruise
     ["W", "W", "CL", "W", "L", "W", null, ""],  // Arlekcking
@@ -474,7 +474,7 @@ function drawRadarLegend() {
     const cx = w / 2, cy = h / 2;
     const maxR = 90;
     // Valores de ejemplo para la leyenda
-    const vals = [5, 4, 6, 3]; 
+    const vals = [5, 4, 6, 3];
     const dirs = [[0, -1], [1, 0], [0, 1], [-1, 0]];
     const labels = ['Cobertura', 'Seguridad', 'Consistencia', 'Aguante'];
 
