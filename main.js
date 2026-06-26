@@ -314,8 +314,8 @@ const RR_RESULTS = [
     ["W", "L", "CL", null, "CL", "", "L", ""],  // Hecvas11
     ["W", "W", "W", "CW", null, "W", "W", "W"],  // LaloCasas
     ["", "CL", "", "", "L", null, "L", ""],  // PitterCruise
-    ["W", "W", "CL", "W", "L", "W", null, ""],  // Arlekcking
-    ["W", "L", "", "", "L", "", "", null]   // Maxiatico
+    ["W", "W", "CL", "W", "L", "W", null, "CW"],  // Arlekcking
+    ["W", "L", "", "", "L", "", "CL", null]   // Maxiatico
 ];
 
 /* ============================================================
