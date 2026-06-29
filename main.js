@@ -311,9 +311,9 @@ const RR_RESULTS = [
     [null, "L", "L", "L", "L", "", "L", "L"],  // alonsopf89
     ["W", null, "W", "W", "L", "CW", "L", "W"],  // Arkev77
     ["W", "L", null, "CW", "L", "", "CW", ""],  // DizzyJuanito19
-    ["W", "L", "CL", null, "CL", "", "L", ""],  // Hecvas11
+    ["W", "L", "CL", null, "CL", "CL", "L", ""],  // Hecvas11
     ["W", "W", "W", "CW", null, "W", "W", "W"],  // LaloCasas
-    ["", "CL", "", "", "L", null, "L", ""],  // PitterCruise
+    ["", "CL", "", "CW", "L", null, "L", ""],  // PitterCruise
     ["W", "W", "CL", "W", "L", "W", null, "CW"],  // Arlekcking
     ["W", "L", "", "", "L", "", "CL", null]   // Maxiatico
 ];
